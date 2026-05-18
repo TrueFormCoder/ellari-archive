@@ -1,0 +1,313 @@
+# ============================================================
+# ELLARI-ARCHIVE .gitignore
+# Protects: sensitive commercial content, credentials, PII, build artifacts
+# Public:   Aetherion canon, MirrorPantheon mythology, system documentation
+# ============================================================
+
+
+# ============================================================
+# PRIVATE CONTENT (project-specific)
+# ============================================================
+
+# Anything in these folders stays local-only
+/private/
+/commercial-private/
+/financials/
+/correspondence/
+/customer-data/
+/internal-strategy/
+
+# Anything marked private by filename pattern
+*.private.md
+*.private.txt
+*.private.json
+*.PRIVATE.*
+*.SECRET.*
+*-private.*
+*-confidential.*
+
+
+# ============================================================
+# SENSITIVE FINANCIAL CONTENT
+# ============================================================
+
+# Revenue, conversion data, financial actuals
+revenue-actuals.*
+conversion-data.*
+stripe-keys.*
+stripe-config-prod.*
+payment-config-prod.*
+*-financials.*
+*-revenue-*.md
+*-revenue-*.csv
+*-pnl.*
+*-projections-real.*
+
+# Trademark filing strategy specifics (keep general docs, hide filing strategy)
+*-trademark-filing-strategy.md
+*-filing-sequence-private.md
+
+
+# ============================================================
+# CUSTOMER & CONTACT DATA
+# ============================================================
+
+*-contacts.*
+*-customers.*
+*-subscribers.*
+*-emails-list.*
+*-mailing-list.*
+*-buyer-list.*
+*.csv-customers
+customers/
+subscribers/
+
+
+# ============================================================
+# COMMERCIAL ASSETS WITH METRICS
+# ============================================================
+
+# Email sequences with real conversion data
+*-with-metrics.*
+*-performance.*
+*-results.*
+
+# A/B test results
+ab-test-*-results.*
+test-results-private/
+
+# Real customer feedback or testimonials with identifying info
+testimonials-raw/
+feedback-with-pii.*
+
+
+# ============================================================
+# CREDENTIALS & API KEYS
+# ============================================================
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+.env.test
+.env*.local
+
+# Credentials of any kind
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+credentials.*
+credentials/
+secrets.*
+secrets/
+
+# API keys patterns
+*api-key*
+*api_key*
+*-secret-*
+*-token-*
+
+# Cloudflare / Vercel / GitHub tokens
+.cloudflare-token
+.vercel-token
+.github-token
+.npmrc
+.pypirc
+
+
+# ============================================================
+# PERSONAL CORRESPONDENCE & DRAFTS
+# ============================================================
+
+journal-private/
+diary/
+personal-notes/
+*.draft.md
+drafts-private/
+
+
+# ============================================================
+# OS FILES
+# ============================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon
+.fseventsd
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+
+# ============================================================
+# EDITORS & IDEs
+# ============================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*.swn
+.netrwhist
+Session.vim
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Cursor / other AI editors
+.cursor/
+
+
+# ============================================================
+# BACKUP & TEMP FILES
+# ============================================================
+
+*.bak
+*.tmp
+*.temp
+*.orig
+*.rej
+*~
+*.old
+*.swp
+
+# Word/Office temp
+~$*
+.~lock.*
+
+
+# ============================================================
+# BUILD ARTIFACTS
+# ============================================================
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Static site generators
+.next/
+.nuxt/
+.output/
+.docusaurus/
+.cache/
+out/
+
+
+# ============================================================
+# LARGE BINARY FILES
+# ============================================================
+# These belong in R2 buckets (ellari-archive-pdf, ellari-threads-md),
+# not in git. Git is bad at versioning binaries.
+
+# Video / audio
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.m4a
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Disk images
+*.dmg
+*.iso
+*.img
+
+# Large images (PNGs/JPGs under 1MB OK; over that → R2)
+# Use git lfs if needed for canonical visual assets
+
+
+# ============================================================
+# AI SESSION TRANSCRIPTS WITH PRIVATE CONTENT
+# ============================================================
+
+# Raw transcripts often contain personal context
+# Filter/sanitize before adding to /threads/
+*-raw-transcript.*
+transcripts-raw/
+*-session-private.*
+
+
+# ============================================================
+# WHAT IS NOT IGNORED (explicit allowlist reminders)
+# ============================================================
+
+# These files SHOULD be tracked publicly:
+#   /canon/aetherion/*          ← all Aetherion canon
+#   /canon/pantheon/*           ← MirrorPantheon
+#   /canon/ele/*                ← ELE doctrine
+#   /canon/black-fairy/*        ← Black Fairy public layer
+#   /cosmic-os/*                ← Cosmic OS inventory
+#   /logs/GG_CrossProject_Log.md  ← master log (sanitized version)
+#   /identity/*                 ← brand documentation
+#   /infrastructure/*.md        ← infrastructure docs (NO keys)
+#   /threads/*                  ← markdown threads (sanitized)
+#   /questions-for-v/*          ← open questions
+#   /deposits/osf-*/*           ← OSF filing records
+#   README.md, LICENSE          ← repo entry points
+#   .gitignore                  ← this file
