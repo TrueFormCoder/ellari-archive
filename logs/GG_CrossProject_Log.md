@@ -4,7 +4,7 @@
 ### Ellari / Mirror Protocol / Aetherion / ELE Ecosystem
 
 **Established:** 2026-05-18
-**Repo:** github.com/TrueFormCoder/ellari-archive (to be created)
+**Repo:** github.com/TrueFormCoder/ellari-archive (LIVE — public)
 **Companion R2:** `ellari-threads-md` (markdown) · `ellari-archive-pdf` (originals)
 **Authority:** This file is the canonical decision log. When there is conflict between any document and this log, this log governs.
 **Recommended by:** ClaudeRT Dream Team Roster (2026-03-17)
@@ -43,7 +43,7 @@
 The GG_CrossProject_Log was recommended by the ClaudeRT Dream Team Roster in March 2026 as the system of record for the entire project ecosystem. Eight months passed without its creation. Every session repeated discovery work. The v7e document (1,141-page Mirror Protocol Cosmic OS architecture) was in the workspace the entire time but did not surface until 2026-05-18. This log corrects the gap.
 
 **Infrastructure stack:**
-- GitHub repository: `ellari-archive` (public or private — user decision pending)
+- GitHub repository: `ellari-archive` (LIVE — public — created 2026-05-18)
 - R2 bucket: `ellari-threads-md` — markdown-converted ChatGPT/Claude threads
 - R2 bucket: `ellari-archive-pdf` — original PDF sources, ChatGPT exports, binary archives
 - Master log file: `/logs/GG_CrossProject_Log.md` (this document)
