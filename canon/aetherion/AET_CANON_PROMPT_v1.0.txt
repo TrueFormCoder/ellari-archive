@@ -1,0 +1,136 @@
+AETHERION MASTER CANON PROMPT v1.0
+Date: 2026-05-17
+Thread: Aetherion Pronunciation Guides I-V
+Status: LOCKED — do not modify without formal canon review
+
+────────────────────────────────────────────────────────────────
+USE THIS PROMPT BEFORE ANY AETHERION GENERATION
+────────────────────────────────────────────────────────────────
+
+Proceed under canonical Aetherion / Eterion v1.x assumptions.
+Use only allowed phonemes.
+
+VOWELS: a e i o u
+Long vowels aa ee ii oo uu are expressive only — not lexically contrastive.
+No schwa. No diphthongs.
+
+CONSONANTS: p b t d k g f v s z sh zh h m n l r y w
+No th. No ch. No j.
+
+R RULE: r is always tapped /ɾ/. Trill only in High Voice as a style choice — not a phonemic difference.
+
+STRESS: Always penultimate. Never move stress for meaning or emphasis.
+
+SYLLABLE SHAPE: (C)(C)V(C)
+
+ALLOWED ONSET CLUSTERS: pr br tr dr kr gr / pl bl kl gl / fr vr / sh+vowel / zh+vowel
+FORBIDDEN CLUSTERS: thr spr str ch j tch dzh and all other non-canon clusters
+
+ALLOWED CODAS: m n s l r only. No coda clusters.
+
+MORPHOLOGY:
+  Sacred roots: el, ar, ri ONLY
+  Approved affixes: -es, -em, -en ONLY
+  No new roots. No new affixes. No new prefixes. No new derivational systems.
+
+TAM SYSTEM:
+  Tense particles: na (past) la (future)
+  Aspect endings: -a (present/imperfective) -te (past/completive) -ren (progressive) -lan (habitual)
+  No other TAM system.
+
+GRAMMAR:
+  Plain Voice: SVO word order
+  High Voice: VSO word order (register shift — not a grammar change)
+  Negation: lo (preverbal)
+  Complement: ki (relative/complement clauses), kan (factive)
+  No new grammar. No new syntax.
+
+DOMAINS: neutral / identity / role / role-field / triad
+  No new semantic domains unless canon is formally expanded.
+
+STATUS LABELS — apply to every entry:
+  ATTESTED (5)      — directly in source materials
+  CANON-DERIVED (4) — built from approved roots/affixes/grammar
+  CANDIDATE (3)     — legal sound shape, not yet canonized
+  PUBLIC-ONLY (2)   — mythic/brand spelling that breaks strict phonology
+  REJECTED (0)      — violates phonology, morphology, syntax, or domain rules
+
+OUTPUT FORMAT — required for every entry:
+  form:
+  display_class: canon | crown_script | public_brand
+  syllables:
+  ipa:
+  stress:
+  domain:
+  morphology:
+  register_options:
+  gloss:
+  common_errors:
+  correction:
+  canon_status: ATTESTED | CANON-DERIVED | CANDIDATE | PUBLIC-ONLY | REJECTED
+  level: 0-5
+
+EXPANSION RULE — you MAY add:
+  More examples. More drills. More IPA. More narration notes.
+  More training formats. More domain-mapped operator readings.
+  More brand-versus-canon distinctions.
+
+EXPANSION RULE — you MAY NOT add:
+  New phonemes. New roots. New affixes. New stress rules.
+  New syntax. New semantic domains. New morphology.
+  New pronunciation exceptions. New grammar.
+
+CROWN SCRIPT RULE:
+  Crown Script names (Aetherion, El–Aetheris, El'rasha Veinon Kaltra, VAESHA, ORAYA)
+  are PUBLIC-ONLY / mythic display layer. They are valid for branding, sigils, titles.
+  They are NOT strict canon Aetherion speech.
+  Canon repairs: Aetherion→Eterion, El–Aetheris→El–Eteris
+
+VOICE REGISTERS (delivery only — do not change grammar):
+  ◯ Plain/Calm — everyday, SVO, unornamented
+  △ Decisive   — crisp, firm, boundary, operator commands
+  ◇ Solemn     — slow, sealed, creed, identity, slight vowel extension allowed
+
+────────────────────────────────────────────────────────────────
+CANON PASS GATE
+────────────────────────────────────────────────────────────────
+A word PASSES if:
+  □ Pure vowels only (a e i o u)
+  □ No schwa
+  □ No diphthongs
+  □ Tapped r
+  □ Legal onset clusters
+  □ Legal coda (m n s l r or vowel only)
+  □ No coda clusters
+  □ Penultimate stress
+  □ Belongs to ELEOS domain
+  □ No new morphology
+
+A word FAILS if it contains: th / ch / j / spr / str / thr / final k,t,d,g,b,p,sh,zh
+
+────────────────────────────────────────────────────────────────
+SPEECH SCORECARD (100 points)
+────────────────────────────────────────────────────────────────
+  Pure vowels           20 pts
+  No schwa              15 pts
+  No diphthongs         15 pts
+  Tapped r              15 pts
+  Penultimate stress    15 pts
+  Legal clusters/codas  10 pts
+  Correct register       5 pts
+  No added phonemes      5 pts
+
+  95-100 = Canon voice
+  85-94  = Usable with minor correction
+  70-84  = Too English
+  Below 70 = Needs retraining
+
+────────────────────────────────────────────────────────────────
+SOURCE AUTHORITY
+────────────────────────────────────────────────────────────────
+Aetherion Core Notes
+AETHERION Pronunciation and Domain Maps
+Aetherion Pronunciation Guides I-V (2026-05-17)
+Lexicon Starter Pack v0.1 (100 entries, AET-LEX-0001 through AET-LEX-0100)
+
+ELLARI · AETHERION · SIGLER SEAL

@@ -1,0 +1,256 @@
+{
+  "meta": {
+    "title": "Sound Key to Operator Cross-Reference",
+    "version": "1.0",
+    "date": "2026-05-18",
+    "purpose": "Bridges the Black Fairy Sound Key Matrix (QF/MS/BE/DF/TH) with the Aetherion Operator Bank. These are the same functional layer — what you sound and what you say to shift state, clear role, and exit field. Neither system is primary. Both are valid. Use whichever layer you need in the moment.",
+    "principle": "Sound Key = somatic entry point. Operator = linguistic seal. Together: full-spectrum governance."
+  },
+
+  "sound_key_operator_map": [
+
+    {
+      "sound_key": "QF",
+      "name": "Quiet Flame",
+      "cue": "Inhale · low drone · single spark",
+      "use": "Calm authority · pre-launch focus · re-entry preparation · boundary conversations",
+      "emotional_register": "Steady. Sovereign. Not performing.",
+      "eleos_domain": "identity",
+      "operators": [
+        {
+          "id": "AET-OP-001",
+          "line": "En es en.",
+          "ipa": "/en es en/",
+          "gloss": "I am myself.",
+          "delivery": "◇ Solemn or Plain",
+          "timing": "Before entering any high-stakes space — launch, conversation, public re-entry"
+        },
+        {
+          "id": "AET-OP-004",
+          "line": "El-es ri es sa rus de en.",
+          "ipa": "/ˈe.les ɾi es sa ɾus de en/",
+          "gloss": "Essence-resonance is my core.",
+          "delivery": "◇ Solemn",
+          "timing": "When identity pressure is coming from outside — after QF settles the body"
+        },
+        {
+          "id": "AET-OP-002",
+          "line": "◇ En es en. Ellari.",
+          "ipa": "/en es en | elˈla.ɾi/",
+          "gloss": "I am myself. Ellari.",
+          "delivery": "◇ Solemn — full seal",
+          "timing": "When the full name seal is needed. The complete QF-mode operator."
+        }
+      ],
+      "sequence": "Sound QF → breathe → En es en. → (if deeper seal needed) El-es ri es sa rus de en. → close: ◇ En es en. Ellari.",
+      "note": "QF is the base layer. Use it before any other key or operator sequence."
+    },
+
+    {
+      "sound_key": "MS",
+      "name": "Mirror Seal",
+      "cue": "Glass tap · sub bass · whisper: Seen. Sealed.",
+      "use": "Perception control · mirror work · image locking · final naming decisions",
+      "emotional_register": "Precise. Witnessed. Locked.",
+      "eleos_domain": "identity + triad",
+      "operators": [
+        {
+          "id": "AET-OP-002",
+          "line": "◇ En es en. Ellari.",
+          "ipa": "/en es en | elˈla.ɾi/",
+          "gloss": "I am myself. Ellari.",
+          "delivery": "◇ Solemn",
+          "timing": "Primary MS operator — the name as mirror seal"
+        },
+        {
+          "id": "AET-OP-003",
+          "line": "Es en Ellari.",
+          "ipa": "/es en elˈla.ɾi/",
+          "gloss": "Am I Ellari.",
+          "delivery": "◇ High Voice — ceremonial",
+          "timing": "Deep mirror work — identity verification mode. Rarely. Only when the question is real."
+        },
+        {
+          "id": "AET-OP-011",
+          "line": "En mel-a ki sa triem es luma.",
+          "ipa": "/en ˈme.la ki sa ˈtri.em es ˈlu.ma/",
+          "gloss": "I say that the triad is bright.",
+          "delivery": "Plain diagnostic",
+          "timing": "After mirror work — naming what you saw. Classification closes the loop."
+        }
+      ],
+      "sequence": "Sound MS → glass tap → ◇ En es en. Ellari. → (if triad analysis needed) En mel-a ki sa triem es luma/dala.",
+      "note": "MS is the seal key. It locks what QF opens. Use in pairs: QF to enter, MS to seal."
+    },
+
+    {
+      "sound_key": "BE",
+      "name": "Black Exit",
+      "cue": "Silence · tone drop · heel click",
+      "use": "Social exit · role exit · symbolic closure · boundary enforcement",
+      "emotional_register": "Clean. No drama. Final.",
+      "eleos_domain": "role + role-field",
+      "operators": [
+        {
+          "id": "AET-OP-005",
+          "line": "Lo es rola de Ellari.",
+          "ipa": "/lo es ˈɾo.la de elˈla.ɾi/",
+          "gloss": "The role is not Ellari's.",
+          "delivery": "△ Decisive",
+          "timing": "Before the exit — the declaration that precedes the action"
+        },
+        {
+          "id": "AET-OP-006",
+          "line": "En del-te rola. Ellari.",
+          "ipa": "/en ˈdel.te ˈɾo.la | elˈla.ɾi/",
+          "gloss": "I unbound the role. Ellari.",
+          "delivery": "△ Decisive",
+          "timing": "The exit action itself — past completive means it is already done"
+        },
+        {
+          "id": "AET-OP-008",
+          "line": "En dam-te fa rolem. Ellari.",
+          "ipa": "/en ˈdam.te fa ˈɾo.lem | elˈla.ɾi/",
+          "gloss": "I exited the role-field. Ellari.",
+          "delivery": "△ Decisive — low, grounded",
+          "timing": "Full field exit — when it is not just a role but the whole relational container"
+        },
+        {
+          "id": "AET-OP-010",
+          "line": "En dam-te fa triem. Ellari.",
+          "ipa": "/en ˈdam.te fa ˈtri.em | elˈla.ɾi/",
+          "gloss": "I exited the triad-field. Ellari.",
+          "delivery": "△ Decisive",
+          "timing": "When the exit is from a triangulated relational structure"
+        }
+      ],
+      "sequence": "Tone drop → silence → Lo es rola de Ellari. → En del-te rola. Ellari. → (if field exit needed) En dam-te fa rolem. Ellari. → heel click → done.",
+      "note": "BE is not angry. It is clean. The heel click is the physical seal — the body completing what the voice started. No explanation follows."
+    },
+
+    {
+      "sound_key": "DF",
+      "name": "DNA Flame",
+      "cue": "Heartbeat · violet swell · breath release",
+      "use": "Embodiment · activation · recovery · self-reclamation",
+      "emotional_register": "Alive. Mine. Fire that returns.",
+      "eleos_domain": "identity — deep root",
+      "operators": [
+        {
+          "id": "AET-OP-001",
+          "line": "En es en.",
+          "ipa": "/en es en/",
+          "gloss": "I am myself.",
+          "delivery": "Plain — not ceremonial, not performed. Just true.",
+          "timing": "The base DF operator. Simple. Absolute. Repeat if needed."
+        },
+        {
+          "id": "AET-OP-004",
+          "line": "El-es ri es sa rus de en.",
+          "ipa": "/ˈe.les ɾi es sa ɾus de en/",
+          "gloss": "Essence-resonance is my core.",
+          "delivery": "◇ Solemn — with the heartbeat still present",
+          "timing": "When recovery needs to name what was not taken"
+        },
+        {
+          "id": "AET-OP-002",
+          "line": "◇ En es en. Ellari.",
+          "ipa": "/en es en | elˈla.ɾi/",
+          "gloss": "I am myself. Ellari.",
+          "delivery": "◇ Full solemn seal",
+          "timing": "DF closes here — the full return. The name is the completion."
+        }
+      ],
+      "sequence": "Heartbeat cue → breath → En es en. → (let it land) → El-es ri es sa rus de en. → ◇ En es en. Ellari. → breath release.",
+      "note": "DF is the recovery key. Not urgency — return. It activates from the inside out. The operator does not command. It remembers."
+    },
+
+    {
+      "sound_key": "TH",
+      "name": "Too Hot",
+      "cue": "Click · spark · bass hit · hush",
+      "use": "Reveal moments · teaser activations · product seal hits · named truth moments",
+      "emotional_register": "Precise. Visible. Declared.",
+      "eleos_domain": "triad + identity",
+      "operators": [
+        {
+          "id": "AET-OP-013",
+          "line": "En mel-a kan sa triem es luma.",
+          "ipa": "/en ˈme.la kan sa ˈtri.em es ˈlu.ma/",
+          "gloss": "I affirm as fact that the triad is bright.",
+          "delivery": "◇ Solemn — the factive. This is not opinion. This is declaration.",
+          "timing": "The reveal moment — when something is named as true and that naming is the act"
+        },
+        {
+          "id": "AET-OP-002",
+          "line": "En es Ellari.",
+          "ipa": "/en es elˈla.ɾi/",
+          "gloss": "I am Ellari.",
+          "delivery": "Direct — no ceremony, just statement",
+          "timing": "TH identity reveal — the name as the spark itself"
+        },
+        {
+          "id": "AET-OP-009",
+          "line": "Var-a en sa rola vi sa triem.",
+          "ipa": "/ˈva.ɾa en sa ˈɾo.la vi sa ˈtri.em/",
+          "gloss": "I see the role in the triad.",
+          "delivery": "Plain diagnostic",
+          "timing": "When the TH moment is naming something about a situation, not just self"
+        }
+      ],
+      "sequence": "Click → bass hit → (silence) → En es Ellari. OR En mel-a kan sa triem es luma. → hush.",
+      "note": "TH is the sharpest key. Use it deliberately. A TH moment that isn't real collapses on itself. The operator must match the actual energy of the moment — not performed, not anticipated."
+    }
+
+  ],
+
+  "full_sequence_protocols": [
+
+    {
+      "protocol": "Pre-Launch Full Sequence",
+      "description": "Before any public activation — content drop, product launch, press moment",
+      "sequence": [
+        "QF → En es en. → El-es ri es sa rus de en.",
+        "MS → ◇ En es en. Ellari.",
+        "DF → breathe → En es en. (once more, plain)",
+        "→ enter"
+      ]
+    },
+
+    {
+      "protocol": "Role Exit Full Sequence",
+      "description": "When leaving a role, relationship container, or dynamic",
+      "sequence": [
+        "QF → En es en. (ground first)",
+        "BE → Lo es rola de Ellari. → En del-te rola. Ellari.",
+        "(if full field) → En dam-te fa rolem. Ellari.",
+        "MS → ◇ En es en. Ellari. (seal the exit)"
+      ]
+    },
+
+    {
+      "protocol": "Recovery Sequence",
+      "description": "After collapse, breach, or loss of self-contact",
+      "sequence": [
+        "DF → En es en. (repeat until it lands)",
+        "QF → El-es ri es sa rus de en.",
+        "MS → ◇ En es en. Ellari.",
+        "(if triad assessment needed) → En mel-a ki sa triem es luma/dala."
+      ]
+    },
+
+    {
+      "protocol": "Competition Day Sequence",
+      "description": "MIRRORBODY™ competition protocol — from session summary",
+      "sequence": [
+        "Morning — QF: ◇ En es en. Ellari.",
+        "Getting ready — DF: El-es ri es sa rus de en.",
+        "Travel — DF anthem with Kaltra EQ",
+        "Backstage — BE: Lo es rola de Ellari. / En del-te rola. Ellari.",
+        "Pump room — DF: En es en.",
+        "On deck — full: Es en Ellari. (High Voice — only here)"
+      ]
+    }
+
+  ]
+}
