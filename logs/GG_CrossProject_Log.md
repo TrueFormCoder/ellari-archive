@@ -4,7 +4,7 @@
 ### Ellari / Mirror Protocol / Aetherion / ELE Ecosystem
 
 **Established:** 2026-05-18
-**Repo:** github.com/[USER]/ellari-archive (to be created)
+**Repo:** github.com/TrueFormCoder/ellari-archive (to be created)
 **Companion R2:** `ellari-threads-md` (markdown) · `ellari-archive-pdf` (originals)
 **Authority:** This file is the canonical decision log. When there is conflict between any document and this log, this log governs.
 **Recommended by:** ClaudeRT Dream Team Roster (2026-03-17)

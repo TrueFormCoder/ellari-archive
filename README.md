@@ -32,8 +32,8 @@ System of record. Append-only. Markdown-first. Web-fetchable from any AI session
 Paste this at the start of any new Claude or ChatGPT session:
 
 ```
-Project repo: https://github.com/[USERNAME]/ellari-archive
-Master log: https://raw.githubusercontent.com/[USERNAME]/ellari-archive/main/logs/GG_CrossProject_Log.md
+Project repo: https://github.com/TrueFormCoder/ellari-archive
+Master log: https://raw.githubusercontent.com/TrueFormCoder/ellari-archive/main/logs/GG_CrossProject_Log.md
 
 Please web_fetch the master log and review the last 14 days of entries
 before responding. The canon prompt for Aetherion sessions is at:
