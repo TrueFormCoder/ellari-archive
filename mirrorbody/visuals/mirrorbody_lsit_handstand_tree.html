@@ -1,0 +1,262 @@
+
+<h2 class="sr-only">Interactive skill progression tree for L-sit to handstand press, showing two convergent tracks and timeline for each skill</h2>
+<style>
+.st{padding:1rem 0;font-family:var(--font-sans)}
+.row{display:flex;justify-content:center;align-items:stretch;gap:10px;margin-bottom:0;position:relative;z-index:1}
+.connector-row{display:flex;justify-content:center;gap:10px;height:28px;position:relative;z-index:0;pointer-events:none}
+.node{border-radius:var(--border-radius-lg);padding:10px 14px;cursor:pointer;transition:all 0.15s;border:0.5px solid;min-width:0;flex:1;max-width:240px;position:relative}
+.node:hover{transform:translateY(-1px)}
+.node.goal{background:#EEEDFE;border-color:#534AB7;max-width:320px}
+.node.p4{background:#FDE8F4;border-color:#E84B9A}
+.node.p3{background:#FAEEDA;border-color:#BA7517}
+.node.p2{background:#E1F5EE;border-color:#1D9E75}
+.node.p1{background:var(--color-background-secondary);border-color:var(--color-border-secondary)}
+.node.support{background:var(--color-background-secondary);border-color:var(--color-border-tertiary);border-style:dashed;cursor:default}
+.ntitle{font-size:12px;font-weight:500;line-height:1.3;margin-bottom:2px}
+.nsub{font-size:10px;opacity:0.7;line-height:1.3}
+.ntag{display:inline-block;font-size:9px;padding:1px 6px;border-radius:8px;margin-top:4px;font-weight:500}
+.tag-goal{background:#534AB7;color:#EEEDFE}
+.tag-p4{background:#E84B9A;color:#FDE8F4}
+.tag-p3{background:#BA7517;color:#FAEEDA}
+.tag-p2{background:#1D9E75;color:#E1F5EE}
+.tag-p1{background:var(--color-border-secondary);color:var(--color-text-secondary)}
+.expand{display:none;margin-top:8px;padding-top:8px;border-top:0.5px solid rgba(0,0,0,0.08);font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.expand.open{display:block}
+.cue{display:flex;gap:5px;margin-bottom:3px}
+.cue::before{content:"›";flex-shrink:0;color:inherit}
+.vert-line{width:0.5px;background:var(--color-border-secondary);margin:0 auto;height:100%}
+.fork{display:flex;width:100%;max-width:500px;margin:0 auto;height:100%;align-items:center;justify-content:space-between;position:relative}
+.fork::before{content:"";position:absolute;bottom:0;left:25%;right:25%;height:0.5px;background:var(--color-border-secondary)}
+.fork-l,.fork-r{width:0.5px;height:100%;background:var(--color-border-secondary)}
+.merge{display:flex;width:100%;max-width:500px;margin:0 auto;height:100%;align-items:center;justify-content:space-between;position:relative}
+.merge::before{content:"";position:absolute;top:0;left:25%;right:25%;height:0.5px;background:var(--color-border-secondary)}
+.merge-l,.merge-r{width:0.5px;height:100%;background:var(--color-border-secondary)}
+.current-badge{position:absolute;top:-8px;right:8px;font-size:9px;padding:1px 7px;background:#534AB7;color:#EEEDFE;border-radius:10px;font-weight:500}
+.you-are-here{font-size:11px;color:#534AB7;text-align:center;margin:4px 0 8px;font-weight:500}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:10px;border-top:0.5px solid var(--color-border-tertiary)}
+.leg{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--color-text-secondary)}
+.leg-dot{width:8px;height:8px;border-radius:50%}
+.video-link{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#534AB7;text-decoration:none;margin-top:4px}
+.daily-box{margin-top:14px;padding:10px 14px;background:#EEEDFE;border:0.5px solid #534AB7;border-radius:var(--border-radius-lg)}
+.daily-title{font-size:11px;font-weight:500;color:#26215C;margin-bottom:6px}
+.daily-row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:0.5px solid #534AB733;font-size:11px}
+.daily-row:last-child{border:none}
+</style>
+
+<div class="st">
+
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px">
+  <span style="font-size:15px;font-weight:500;letter-spacing:-0.01em">MIRRORBODY</span>
+  <span style="font-size:9px;color:var(--color-text-secondary);letter-spacing:0.1em;text-transform:uppercase">skill progression tree</span>
+</div>
+
+<div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:16px">Two parallel tracks — L-sit and handstand — converge at the goal. Tap any node for details and drill protocol.</div>
+
+<!-- GOAL -->
+<div class="row">
+  <div class="node goal" onclick="tog(this)">
+    <div class="ntitle" style="font-size:13px;color:#26215C">L-sit → press to handstand</div>
+    <div class="nsub" style="color:#534AB7">The goal. Phase 4+. Year 2–4.</div>
+    <span class="ntag tag-goal">Goal</span>
+    <div class="expand">
+      <div class="cue">Requires all six prerequisites simultaneously — strength, balance, flexibility, compression</div>
+      <div class="cue">The L-sit provides compression to press legs overhead. The handstand provides the destination.</div>
+      <div class="cue">The straddle press (legs apart) is slightly easier than pike press (legs together) — train that first</div>
+      <div class="cue">On parallettes: slightly easier than floor due to wrist angle and clearance</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=l-sit+press+handstand+parallettes+tutorial+progression" target="_blank" rel="noopener">▶ Watch progression videos ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Merge lines -->
+<div class="connector-row"><div class="merge" style="max-width:480px"><div class="merge-l"></div><div class="merge-r"></div></div></div>
+
+<!-- Level 4: Freestanding HS + Full L-sit -->
+<div class="row">
+  <div class="node p4" onclick="tog(this)">
+    <div class="ntitle" style="color:#4B1528">Freestanding handstand</div>
+    <div class="nsub">10+ sec controlled hold</div>
+    <span class="ntag tag-p4">Phase 4 · Month 18–30</span>
+    <div class="expand">
+      <div class="cue">The hardest prerequisite. Requires daily 10–15 min wall + freestanding practice — separate from strength training</div>
+      <div class="cue">Straight body, ears between arms, eyes forward, fingertip pressure for balance</div>
+      <div class="cue">Wall handstand → chest-to-wall HS → kick up to freestanding → hold progression</div>
+      <div class="cue">Most people need 12–24 months of consistent daily practice</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=freestanding+handstand+progression+for+beginners" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+  <div class="node p4" onclick="tog(this)">
+    <div class="ntitle" style="color:#4B1528">Full L-sit 10+ sec</div>
+    <div class="nsub">Legs parallel to floor</div>
+    <span class="ntag tag-p4">Phase 3–4 · Month 9–18</span>
+    <div class="expand">
+      <div class="cue">Arms locked straight, legs fully extended horizontal, body in compression</div>
+      <div class="cue">Requires both hip flexor strength AND hamstring flexibility — both must be present</div>
+      <div class="cue">If hamstrings are tight, you can have the hip flexor strength and still not hold it</div>
+      <div class="cue">Build from tuck → single-leg extend → full. See L-sit progression card.</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=full+l-sit+progression+parallettes" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Fork lines -->
+<div class="connector-row"><div class="fork" style="max-width:480px"><div class="fork-l"></div><div class="fork-r"></div></div></div>
+
+<!-- Level 3: Wall HS + Tuck press + Single-leg L -->
+<div class="row">
+  <div class="node p3" onclick="tog(this)">
+    <div class="ntitle" style="color:#412402">Wall handstand 30+ sec</div>
+    <div class="nsub">Chest-to-wall, straight body</div>
+    <span class="ntag tag-p3">Phase 2–3 · Month 6–12</span>
+    <div class="expand">
+      <div class="cue">Face the wall, walk hands in close, body straight (not banana)</div>
+      <div class="cue">Chest-to-wall forces proper body line — not the arched "banana" handstand</div>
+      <div class="cue">Hold 30+ sec with straight body before progressing to kicking up</div>
+      <div class="cue">Practice: kick up, hold, controlled descent. 5–10 attempts per day session.</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=chest+to+wall+handstand+tutorial+beginners" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+  <div class="node p3" onclick="tog(this)">
+    <div class="ntitle" style="color:#412402">Tuck press to HS (floor)</div>
+    <div class="nsub">First pressing movement</div>
+    <span class="ntag tag-p3">Phase 3 · Month 12–20</span>
+    <div class="expand">
+      <div class="cue">From tuck L-sit: shift weight forward over hands and press legs overhead</div>
+      <div class="cue">This is the pressing pattern — the same movement as the full skill but with tucked legs</div>
+      <div class="cue">Requires: solid tuck L-sit + solid shoulder strength from the main program</div>
+      <div class="cue">Parallettes make this significantly easier than floor (more clearance)</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=tuck+press+handstand+parallettes+progression" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+  <div class="node p3" onclick="tog(this)">
+    <div class="ntitle" style="color:#412402">Single-leg L-sit</div>
+    <div class="nsub">One leg extended, one tucked</div>
+    <span class="ntag tag-p3">Phase 2–3 · Month 6–12</span>
+    <div class="expand">
+      <div class="cue">One leg fully extended horizontal. One leg tucked.</div>
+      <div class="cue">10 sec per side. Builds the compression and hip flexor strength asymmetrically</div>
+      <div class="cue">Direct bridge to the full L-sit — easier than both legs extended</div>
+      <div class="cue">If you can hold this for 15 sec each side, you're close to the full L-sit</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=l-sit+progression+single+leg+extended" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- Connector -->
+<div class="connector-row"><div style="width:100%;max-width:500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;height:100%"><div class="vert-line"></div><div class="vert-line"></div><div class="vert-line"></div></div></div>
+
+<!-- Level 2 -->
+<div class="row">
+  <div class="node p2" onclick="tog(this)">
+    <div class="ntitle" style="color:#085041">Pike push-up 10 reps</div>
+    <div class="nsub">Parallettes, hips high</div>
+    <span class="ntag tag-p2">Phase 2 · Month 3–8</span>
+    <div class="expand">
+      <div class="cue">Feet elevated on step, hands on parallettes, inverted V position</div>
+      <div class="cue">Lower crown of head toward floor — straight-arm shoulder pressing pattern</div>
+      <div class="cue">10 clean reps = shoulder strength prerequisite for handstand work is met</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=pike+push+up+parallettes+handstand+progression" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+  <div class="node p2" onclick="tog(this)">
+    <div class="ntitle" style="color:#085041">Handstand wall hold</div>
+    <div class="nsub">Back to wall, 10+ sec</div>
+    <span class="ntag tag-p2">Phase 1–2 · Month 1–6</span>
+    <div class="expand">
+      <div class="cue">Back to wall first (banana shape is fine here — it's the entry point)</div>
+      <div class="cue">Goal: 10 sec comfortable hold. Then transition to chest-to-wall for straight body.</div>
+      <div class="cue">Start this DAY ONE. The handstand track runs parallel to everything else in the program</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=wall+handstand+for+beginners+tutorial" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+  <div class="node p2" onclick="tog(this)">
+    <div class="ntitle" style="color:#085041">Tuck L-sit 20+ sec</div>
+    <div class="nsub">Parallettes, knees tucked</div>
+    <span class="ntag tag-p2">Phase 1–2 · Month 1–4</span>
+    <div class="expand">
+      <div class="cue">Arms locked straight — this is non-negotiable. Bent arms = not an L-sit</div>
+      <div class="cue">Knees tucked tight to chest. Hold until arms fail.</div>
+      <div class="cue">This is where you are right now. The program started here.</div>
+      <div class="cue">20 sec clean hold = ready to extend one leg. This takes weeks, not sessions.</div>
+      <a class="video-link" href="https://www.youtube.com/results?search_query=tuck+l-sit+parallettes+how+to" target="_blank" rel="noopener">▶ Tutorial ↗</a>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;margin:8px 0"><span style="font-size:11px;font-weight:500;color:#534AB7;background:#EEEDFE;padding:3px 12px;border-radius:20px">← you are here</span></div>
+
+<!-- Connector -->
+<div class="connector-row" style="height:20px"><div style="width:100%;max-width:500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;height:100%"><div class="vert-line"></div><div class="vert-line"></div><div class="vert-line"></div></div></div>
+
+<!-- Level 1: Foundations -->
+<div class="row" style="gap:8px">
+  <div class="node p1" onclick="tog(this)" style="max-width:150px">
+    <div class="ntitle">Wrist prep</div>
+    <div class="nsub">Daily protocol</div>
+    <span class="ntag tag-p1">Start now</span>
+    <div class="expand">
+      <div class="cue">Wrist circles 10× each direction</div>
+      <div class="cue">Wrist push-ups (kneeling, rock forward/back)</div>
+      <div class="cue">Plank on fists 30 sec</div>
+    </div>
+  </div>
+  <div class="node p1" onclick="tog(this)" style="max-width:150px">
+    <div class="ntitle">Shoulder strength</div>
+    <div class="nsub">OHP, rows, dips</div>
+    <span class="ntag tag-p1">Phase 1 (already building)</span>
+    <div class="expand">
+      <div class="cue">Overhead press + bench press from main program</div>
+      <div class="cue">Pike push-ups and dips on parallettes</div>
+      <div class="cue">You're already building this. The program has it covered.</div>
+    </div>
+  </div>
+  <div class="node p1" onclick="tog(this)" style="max-width:150px">
+    <div class="ntitle">Hip flexors</div>
+    <div class="nsub">Compression strength</div>
+    <span class="ntag tag-p1">Start now</span>
+    <div class="expand">
+      <div class="cue">Seated leg lift holds: sit on floor, legs straight, lift both legs off ground and hold</div>
+      <div class="cue">Tuck L-sit on floor (no bars) — builds compression without wrist load</div>
+      <div class="cue">Hanging knee raise (when pull-up bar installed)</div>
+    </div>
+  </div>
+  <div class="node p1" onclick="tog(this)" style="max-width:150px">
+    <div class="ntitle">Hamstrings</div>
+    <div class="nsub">Flexibility for L</div>
+    <span class="ntag tag-p1">Start now</span>
+    <div class="expand">
+      <div class="cue">Seated forward fold: legs straight, reach toward feet, hold 60 sec daily</div>
+      <div class="cue">Pike stretch: standing, hinge at hip, hands reach floor</div>
+      <div class="cue">If you can't touch your toes with straight legs, the full L-sit will be a flexibility issue, not a strength issue</div>
+    </div>
+  </div>
+</div>
+
+<!-- Daily practice protocol -->
+<div class="daily-box">
+  <div class="daily-title">Daily skill practice protocol — 12 min, separate from strength sessions</div>
+  <div class="daily-row"><span>Wrist warm-up</span><span style="color:#534AB7;font-family:var(--font-mono)">2 min · every day</span></div>
+  <div class="daily-row"><span>Tuck L-sit attempts (max hold)</span><span style="color:#534AB7;font-family:var(--font-mono)">5 × max hold · every day</span></div>
+  <div class="daily-row"><span>Wall handstand kicks (back to wall)</span><span style="color:#534AB7;font-family:var(--font-mono)">10 attempts · every day</span></div>
+  <div class="daily-row"><span>Seated forward fold (hamstrings)</span><span style="color:#534AB7;font-family:var(--font-mono)">3 × 60 sec · every day</span></div>
+  <div class="daily-row"><span>Seated leg lift hold (compression)</span><span style="color:#534AB7;font-family:var(--font-mono)">5 × max hold · every day</span></div>
+  <div style="font-size:10px;color:#3C3489;margin-top:6px">Skill practice is not strength training — it runs every day including rest days. Consistency of practice is the #1 variable. Sporadic practice doesn't build the neural patterns.</div>
+</div>
+
+<!-- Legend -->
+<div class="legend">
+  <div class="leg"><div class="leg-dot" style="background:#E84B9A"></div>Phase 4 (Year 1.5–3)</div>
+  <div class="leg"><div class="leg-dot" style="background:#BA7517"></div>Phase 3 (Month 12–24)</div>
+  <div class="leg"><div class="leg-dot" style="background:#1D9E75"></div>Phase 2 (Month 3–12)</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--color-border-secondary)"></div>Foundation (start now)</div>
+</div>
+
+</div>
+
+<script>
+function tog(el){
+  const exp=el.querySelector('.expand');
+  if(!exp) return;
+  exp.classList.toggle('open');
+}
+</script>

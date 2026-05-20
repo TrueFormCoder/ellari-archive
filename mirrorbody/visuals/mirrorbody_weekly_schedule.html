@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRRORBODY Weekly Schedule</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f9f9f7;padding:1.5rem;color:#1a1a18}
+h1{font-size:17px;font-weight:500;margin-bottom:4px}
+.sub{font-size:13px;color:#666;margin-bottom:1.25rem}
+.phase-toggle{display:flex;gap:6px;margin-bottom:1.25rem}
+.ptab{font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid #ccc;background:#fff;color:#666;cursor:pointer}
+.ptab.on{background:#26215C;color:#CECBF6;border-color:#26215C}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.day{background:#fff;border:1px solid #e8e8e4;border-radius:12px;padding:10px;min-height:160px;display:flex;flex-direction:column;gap:5px}
+.day.rest{background:#f5f5f2;border-style:dashed}
+.day-name{font-size:11px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:0.04em}
+.day-type{font-size:12px;font-weight:500;color:#1a1a18;line-height:1.3;margin-top:2px}
+.exercises{display:flex;flex-direction:column;gap:2px;margin-top:3px}
+.ex{font-size:10px;color:#666;line-height:1.4}
+.tag{display:inline-block;font-size:9px;padding:1px 6px;border-radius:8px;margin-top:4px;font-weight:500}
+.tag-lift{background:#EEEDFE;color:#3C3489}
+.tag-active{background:#EAF3DE;color:#27500A}
+.tag-cardio{background:#F1EFE8;color:#444}
+.tag-rest{background:#eee;color:#999}
+.duration{font-size:10px;color:#999;margin-top:auto;padding-top:4px}
+@media(max-width:640px){.week{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<h1>MIRRORBODY weekly schedule</h1>
+<p class="sub">Toggle between Phase 1 (3×/week) and Phase 2 (4×/week).</p>
+<div class="phase-toggle">
+  <button class="ptab on" onclick="setPhase(1,this)">Phase 1 — 3×/week</button>
+  <button class="ptab" onclick="setPhase(2,this)">Phase 2 — 4×/week</button>
+</div>
+<div class="week" id="week"></div>
+<script>
+const p1=[
+  {day:'Mon',type:'Day A · Full body',tag:'lift',exercises:['Back squat','DB Romanian DL','Barbell bench press','Inverted row','Farmer\'s carry','Dead bug'],duration:'~55 min'},
+  {day:'Tue',type:'Rest',tag:'rest',exercises:[],duration:'Walk or stretch'},
+  {day:'Wed',type:'Day B · Full body',tag:'lift',exercises:['Conventional deadlift','Goblet squat','Overhead press','Chair: lat pull','Chair: footwork','Glute bridge'],duration:'~55 min'},
+  {day:'Thu',type:'Active recovery',tag:'active',exercises:['Bike 20–30 min Zone 2'],duration:'~30 min'},
+  {day:'Fri',type:'Day C · Full body',tag:'lift',exercises:['Box squat','DB hip thrust','Incline press','Chair: row','Chair: pushdown','Anti-rotation'],duration:'~55 min'},
+  {day:'Sat',type:'Active recovery',tag:'active',exercises:['Bike or incline trainer 30 min','Zone 2 — conversational pace'],duration:'~30 min'},
+  {day:'Sun',type:'Full rest',tag:'rest',exercises:['Sleep · recover'],duration:'8+ hrs sleep'},
+];
+const p2=[
+  {day:'Mon',type:'Upper A · Push',tag:'lift',exercises:['Barbell bench press','Overhead press','Incline DB press','Chair: lateral raise','Chair: pushdown','Chair: face pull'],duration:'~65 min'},
+  {day:'Tue',type:'Lower A · Squat',tag:'lift',exercises:['Back squat','Bulgarian split squat','Chair: single-leg footwork','Chair: hamstring curl','Hip thrust','Step-up'],duration:'~65 min'},
+  {day:'Wed',type:'Recovery',tag:'active',exercises:['Bike 30 min Zone 2','Mobility 15 min'],duration:'~45 min'},
+  {day:'Thu',type:'Upper B · Pull',tag:'lift',exercises:['Inverted row elevated','Barbell bent-over row','Chair: seated row','Chair: high row','Bicep curl'],duration:'~65 min'},
+  {day:'Fri',type:'Lower B · Hinge',tag:'lift',exercises:['Conventional deadlift','Romanian DL','Good morning','Single-leg RDL','Chair: kickback','Farmer\'s carry'],duration:'~65 min'},
+  {day:'Sat',type:'Optional · Cardio',tag:'cardio',exercises:['Incline trainer intervals','OR bike HIIT','OR rucking'],duration:'~25–30 min'},
+  {day:'Sun',type:'Full rest',tag:'rest',exercises:['Non-negotiable'],duration:'8+ hrs sleep'},
+];
+const tc={lift:'tag-lift',active:'tag-active',cardio:'tag-cardio',rest:'tag-rest'};
+function setPhase(n,btn){
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  render(n===1?p1:p2);
+}
+function render(data){
+  document.getElementById('week').innerHTML=data.map(d=>`
+    <div class="day ${d.tag==='rest'?'rest':''}">
+      <div class="day-name">${d.day}</div>
+      <div class="day-type">${d.type}</div>
+      ${d.exercises.length?`<div class="exercises">${d.exercises.map(e=>`<div class="ex">· ${e}</div>`).join('')}</div>`:''}
+      <span class="tag ${tc[d.tag]}">${d.tag}</span>
+      <div class="duration">${d.duration}</div>
+    </div>
+  `).join('');
+}
+render(p1);
+</script>
+</body>
+</html>
