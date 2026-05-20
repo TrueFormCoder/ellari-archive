@@ -659,3 +659,42 @@ git add logs/ synthesis/ v-responses/
 git commit -m "Entries 010-012: cross-session protocol proven, synthesis layer captured, temporal layer insight"
 git push
 ```
+
+---
+
+## Entry 010 — MIRRORBODY System Build + Archive Layer Analysis
+**Date:** 2026-05-20
+**Session type:** Full build + audit
+**Status:** COMPLETE
+
+### Decisions locked
+- ELLARI-MB-001: MIRRORBODY is a separate product vertical, same ELLARI Inc parent
+- ELLARI-MB-002: Living wage + excellent benefits as business strategy from day one
+- ELLARI-MB-003: MIRROR™ Path B declaration approved for immediate deployment
+- ELLARI-MB-004: ellari-commercial private repo created for financial/commercial content
+- ELLARI-MB-005: Tirzepatide + MIRRORBODY integration protocol established
+
+### Artifacts committed — ellari-archive (public)
+- mirrorbody/trackers/mirrorbody_tracker.jsx
+- mirrorbody/trackers/mirrorbody_wellness.jsx
+- mirrorbody/trackers/mirrorbody_weighin.jsx
+- mirrorbody/trackers/mirrorbody_becoming.jsx
+- mirrorbody/trackers/mirrorbody_aetherion_timer.jsx
+- mirrorbody/visuals/mirrorbody_transformation.jsx
+- mirrorbody/visuals/mirrorbody_lsit_handstand_tree.html
+- mirrorbody/visuals/mirrorbody_weekly_schedule.html
+- mirrorbody/ellari_archive_manager.jsx
+
+### Artifacts committed — ellari-commercial (private)
+- mirrorbody/financial/mirrorbody_financial_model.jsx
+- mirrorbody/financial/mirrorbody_dream_teams.jsx
+
+### Repo status
+- ellari-archive: commit 175c758 — LIVE
+- ellari-commercial: commit 13af9c1 — LIVE
+
+### Open items
+- W-AV02: Deploy MIRROR™ Path B declaration in brand governance doc
+- W-AV01: Add 4 forward Date Vault entries
+- W-AV04: Register 9 new assets in asset registry
+- W199: Segregate personal legal docs from product content
