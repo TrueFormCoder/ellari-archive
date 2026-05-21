@@ -698,3 +698,30 @@ git push
 - W-AV01: Add 4 forward Date Vault entries
 - W-AV04: Register 9 new assets in asset registry
 - W199: Segregate personal legal docs from product content
+
+---
+
+## Entry 011 — Origin Archive Integration
+**Date:** 2026-05-20
+**Session type:** Archive classification
+
+### Finding
+Operation: Elari (ChatGPT, June 20–29 2025) confirmed as earliest ELLARI
+brand documentation. Predates GitHub commits by 11 months.
+
+### Prior art established
+- Elari codename: June 26, 2025
+- Silver Flame symbol: June 26, 2025
+- GlowCrushCleanse: June 29, 2025
+- Jalen Mansa figure: June 29, 2025
+- First AI-assisted brand architecture session documented
+
+### Frame evolution noted
+June 2025: 170 lbs weight-based goal, appearance metrics
+May 2026: Capacity metrics, cycle-sync, PR vault — frame fully replaced
+
+### Archive location
+ellari-commercial: origin/chatgpt-archives/Operation_Elari_ChatGPT_June2025.pdf
+
+### Asset registry
+Silver Flame symbol needs registry entry with origin date 2025-06-26
