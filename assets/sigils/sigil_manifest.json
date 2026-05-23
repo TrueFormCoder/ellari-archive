@@ -1,0 +1,229 @@
+{
+  "version": "2.0",
+  "count": 12,
+  "palettes": [
+    "silver",
+    "gold",
+    "violet",
+    "print-white",
+    "print-black"
+  ],
+  "sigils": [
+    {
+      "id": "Mirror_Seal",
+      "num": "S-01",
+      "ritual": "R.02",
+      "name": "Mirror Seal",
+      "tier": "member",
+      "intensity": 2,
+      "bl": true,
+      "sla": "I1 + L2 + F1",
+      "status": "verified",
+      "files": {
+        "silver": "Mirror_Seal_silver.svg",
+        "gold": "Mirror_Seal_gold.svg",
+        "violet": "Mirror_Seal_violet.svg",
+        "print-white": "Mirror_Seal_print-white.svg",
+        "print-black": "Mirror_Seal_print-black.svg"
+      }
+    },
+    {
+      "id": "DNA_Flame",
+      "num": "S-02",
+      "ritual": "R.09",
+      "name": "DNA Flame",
+      "tier": "member",
+      "intensity": 2,
+      "bl": true,
+      "sla": "R1 + T1 + F1",
+      "status": "verified",
+      "files": {
+        "silver": "DNA_Flame_silver.svg",
+        "gold": "DNA_Flame_gold.svg",
+        "violet": "DNA_Flame_violet.svg",
+        "print-white": "DNA_Flame_print-white.svg",
+        "print-black": "DNA_Flame_print-black.svg"
+      }
+    },
+    {
+      "id": "Shadowlight_Shield",
+      "num": "S-03",
+      "ritual": "R.05",
+      "name": "Shadowlight Shield",
+      "tier": "open",
+      "intensity": 1,
+      "bl": false,
+      "sla": "I1 (hex) + L2 + F1",
+      "status": "verified",
+      "files": {
+        "silver": "Shadowlight_Shield_silver.svg",
+        "gold": "Shadowlight_Shield_gold.svg",
+        "violet": "Shadowlight_Shield_violet.svg",
+        "print-white": "Shadowlight_Shield_print-white.svg",
+        "print-black": "Shadowlight_Shield_print-black.svg"
+      }
+    },
+    {
+      "id": "Spiral_Release",
+      "num": "S-04",
+      "ritual": "R.08",
+      "name": "Spiral Release",
+      "tier": "open",
+      "intensity": 1,
+      "bl": false,
+      "sla": "I1 + R1 (\u27f3 ri-mark)",
+      "status": "fixed \u2014 centered spiral",
+      "files": {
+        "silver": "Spiral_Release_silver.svg",
+        "gold": "Spiral_Release_gold.svg",
+        "violet": "Spiral_Release_violet.svg",
+        "print-white": "Spiral_Release_print-white.svg",
+        "print-black": "Spiral_Release_print-black.svg"
+      }
+    },
+    {
+      "id": "Void_Mirror",
+      "num": "S-05",
+      "ritual": "R.10",
+      "name": "Void Mirror",
+      "tier": "bl",
+      "intensity": 3,
+      "bl": true,
+      "sla": "\u25a1 (I1-ext) + T1",
+      "status": "fixed \u2014 diagonal extended + 4.5px",
+      "files": {
+        "silver": "Void_Mirror_silver.svg",
+        "gold": "Void_Mirror_gold.svg",
+        "violet": "Void_Mirror_violet.svg",
+        "print-white": "Void_Mirror_print-white.svg",
+        "print-black": "Void_Mirror_print-black.svg"
+      }
+    },
+    {
+      "id": "Memory_Spiral",
+      "num": "S-06",
+      "ritual": "Zakhor",
+      "name": "Memory Spiral",
+      "tier": "open",
+      "intensity": 1,
+      "bl": false,
+      "sla": "R1 + P1 + F1",
+      "status": "fixed \u2014 line extended to ellipse",
+      "files": {
+        "silver": "Memory_Spiral_silver.svg",
+        "gold": "Memory_Spiral_gold.svg",
+        "violet": "Memory_Spiral_violet.svg",
+        "print-white": "Memory_Spiral_print-white.svg",
+        "print-black": "Memory_Spiral_print-black.svg"
+      }
+    },
+    {
+      "id": "Winged_Threshold",
+      "num": "S-07",
+      "ritual": "R.15",
+      "name": "Winged Threshold",
+      "tier": "member",
+      "intensity": 2,
+      "bl": false,
+      "sla": "P1 + F1 + F1",
+      "status": "verified",
+      "files": {
+        "silver": "Winged_Threshold_silver.svg",
+        "gold": "Winged_Threshold_gold.svg",
+        "violet": "Winged_Threshold_violet.svg",
+        "print-white": "Winged_Threshold_print-white.svg",
+        "print-black": "Winged_Threshold_print-black.svg"
+      }
+    },
+    {
+      "id": "Linebreaker_Axis",
+      "num": "S-08",
+      "ritual": "R.17",
+      "name": "Linebreaker Axis",
+      "tier": "bl",
+      "intensity": 3,
+      "bl": true,
+      "sla": "I1 + T1 + F1 (through) + S3",
+      "status": "verified",
+      "files": {
+        "silver": "Linebreaker_Axis_silver.svg",
+        "gold": "Linebreaker_Axis_gold.svg",
+        "violet": "Linebreaker_Axis_violet.svg",
+        "print-white": "Linebreaker_Axis_print-white.svg",
+        "print-black": "Linebreaker_Axis_print-black.svg"
+      }
+    },
+    {
+      "id": "Invocation_Crown",
+      "num": "S-09",
+      "ritual": "R.01",
+      "name": "Invocation Crown",
+      "tier": "open",
+      "intensity": 1,
+      "bl": false,
+      "sla": "I1 + S3 + F1",
+      "status": "new",
+      "files": {
+        "silver": "Invocation_Crown_silver.svg",
+        "gold": "Invocation_Crown_gold.svg",
+        "violet": "Invocation_Crown_violet.svg",
+        "print-white": "Invocation_Crown_print-white.svg",
+        "print-black": "Invocation_Crown_print-black.svg"
+      }
+    },
+    {
+      "id": "Memory_Unbinding",
+      "num": "S-10",
+      "ritual": "R.06",
+      "name": "Memory Unbinding",
+      "tier": "bl",
+      "intensity": 3,
+      "bl": true,
+      "sla": "L2 + T1",
+      "status": "new",
+      "files": {
+        "silver": "Memory_Unbinding_silver.svg",
+        "gold": "Memory_Unbinding_gold.svg",
+        "violet": "Memory_Unbinding_violet.svg",
+        "print-white": "Memory_Unbinding_print-white.svg",
+        "print-black": "Memory_Unbinding_print-black.svg"
+      }
+    },
+    {
+      "id": "Mirror_Audit",
+      "num": "S-11",
+      "ritual": "R.16",
+      "name": "Mirror Audit",
+      "tier": "open",
+      "intensity": 1,
+      "bl": false,
+      "sla": "I1\u00d73 + T1 + F1",
+      "status": "new",
+      "files": {
+        "silver": "Mirror_Audit_silver.svg",
+        "gold": "Mirror_Audit_gold.svg",
+        "violet": "Mirror_Audit_violet.svg",
+        "print-white": "Mirror_Audit_print-white.svg",
+        "print-black": "Mirror_Audit_print-black.svg"
+      }
+    },
+    {
+      "id": "Mirror_Circuit",
+      "num": "S-12",
+      "ritual": "MIRROR\u2122",
+      "name": "Mirror Circuit",
+      "tier": "brand",
+      "intensity": 0,
+      "bl": false,
+      "sla": "S3 + L2 + I1",
+      "status": "new",
+      "files": {
+        "silver": "Mirror_Circuit_silver.svg",
+        "gold": "Mirror_Circuit_gold.svg",
+        "violet": "Mirror_Circuit_violet.svg",
+        "print-white": "Mirror_Circuit_print-white.svg",
+        "print-black": "Mirror_Circuit_print-black.svg"
+      }
+    }
+  ]
+}
