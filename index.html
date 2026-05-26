@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="MEMEXEDOT — The Ellari System Archive. Edot · Zakhor · Memex.">
+<meta property="og:title" content="MEMEXEDOT · ELLARI SYSTEM ARCHIVE">
+<title>MEMEXEDOT · Ellari System Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #0f1420;
+  --deep:   #161d2e;
+  --panel:  #1c2540;
+  --panel2: #222d4a;
+  --border: #2a3660;
+  --border2:#1e2848;
+  --gold:   #c8a84b;
+  --gold2:  #7a5e1e;
+  --gold3:  #e8c870;
+  --amber:  #d4956a;
+  --silver: #8090b0;
+  --mist:   #445070;
+  --white:  #e8ecf8;
+  --green:  #40a870;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── GRAIN ── */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px;
+}
+
+/* ── TOP BAR ── */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(15,20,32,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border2);
+  padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 48px;
+}
+
+.tb-brand {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .25em; color: var(--gold);
+  text-transform: uppercase; text-decoration: none;
+}
+
+.tb-nav { display: flex; gap: 4px; }
+
+.tb-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--mist); padding: 6px 10px; text-decoration: none;
+  border-radius: 3px; transition: color .2s, background .2s;
+}
+.tb-link:hover { color: var(--gold); background: rgba(200,168,75,.06); }
+
+.tb-mirror {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; letter-spacing: .2em; color: var(--silver);
+  text-transform: uppercase;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 72px 32px 56px;
+  max-width: 960px; margin: 0 auto;
+  border-bottom: 1px solid var(--border2);
+}
+
+.hero-kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; letter-spacing: .5em; color: var(--mist);
+  text-transform: uppercase; margin-bottom: 18px; display: block;
+}
+
+.hero-title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 300; letter-spacing: .1em;
+  color: var(--white); line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.hero-title span { color: var(--gold); }
+
+.hero-etymology {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.etym-item {
+  display: flex; flex-direction: column; gap: 3px;
+}
+
+.etym-word {
+  font-family: 'IM Fell English', serif;
+  font-style: italic; font-size: 14px; color: var(--gold);
+}
+
+.etym-def {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; letter-spacing: .15em; color: var(--mist);
+  text-transform: uppercase;
+}
+
+.hero-rule {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--gold2), transparent);
+  margin-bottom: 20px; opacity: .6;
+}
+
+.hero-desc {
+  font-size: clamp(14px,2.2vw,17px);
+  font-style: italic; color: var(--silver);
+  line-height: 1.7; max-width: 580px;
+}
+
+/* ── MAIN GRID ── */
+.main {
+  position: relative; z-index: 1;
+  max-width: 960px; margin: 0 auto;
+  padding: 0 32px 80px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+}
+
+@media(max-width: 700px) {
+  .main { grid-template-columns: 1fr; padding: 0 20px 80px; }
+  .sidebar { display: none; }
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  padding: 40px 0;
+  border-right: 1px solid var(--border2);
+  padding-right: 32px;
+}
+
+.sb-section { margin-bottom: 32px; }
+
+.sb-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 7.5px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--mist); margin-bottom: 10px; display: block;
+}
+
+.sb-link {
+  display: block; text-decoration: none;
+  font-size: 13px; color: var(--silver);
+  padding: 4px 0; letter-spacing: .02em;
+  transition: color .15s;
+  border-left: 2px solid transparent;
+  padding-left: 10px; margin-left: -10px;
+}
+
+.sb-link:hover { color: var(--gold); border-left-color: var(--gold2); }
+.sb-link.active { color: var(--gold); border-left-color: var(--gold); }
+
+.sb-count {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; color: var(--mist);
+  float: right; margin-top: 1px;
+}
+
+/* ── CONTENT ── */
+.content { padding: 40px 0 0 40px; }
+
+@media(max-width:700px) {
+  .content { padding: 24px 0 0 0; }
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 56px; }
+
+.sect-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 7.5px; letter-spacing: .4em; text-transform: uppercase;
+  color: var(--mist); margin-bottom: 8px; display: block;
+}
+
+.sect-title {
+  font-size: 26px; font-weight: 300; letter-spacing: .07em;
+  color: var(--white); margin-bottom: 10px;
+}
+
+.sect-desc {
+  font-size: 13px; font-style: italic; color: var(--silver);
+  line-height: 1.7; margin-bottom: 20px;
+  max-width: 520px;
+}
+
+.sect-rule {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, var(--border), transparent);
+  margin-bottom: 24px;
+}
+
+/* ── DOCUMENT CARDS ── */
+.doc-grid {
+  display: flex; flex-direction: column; gap: 2px;
+}
+
+.doc-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all .15s;
+  cursor: pointer;
+}
+
+.doc-item:hover {
+  background: rgba(200,168,75,.04);
+  border-color: var(--border2);
+}
+
+.doc-icon {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px; color: var(--mist);
+  flex-shrink: 0; padding-top: 2px;
+  width: 28px;
+}
+
+.doc-body { flex: 1; }
+
+.doc-name {
+  font-size: 14px; color: var(--white);
+  letter-spacing: .02em; display: block; margin-bottom: 3px;
+}
+
+.doc-meta {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; color: var(--mist);
+  letter-spacing: .1em;
+}
+
+.doc-tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 7px; letter-spacing: .15em; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 2px; margin-left: 6px;
+  border: 1px solid var(--border);
+  color: var(--mist);
+}
+
+.doc-tag.canon { color: var(--gold); border-color: var(--gold2); }
+.doc-tag.myth { color: #9870d0; border-color: rgba(152,112,208,.3); }
+.doc-tag.log { color: var(--amber); border-color: rgba(212,149,106,.3); }
+.doc-tag.deposit { color: var(--green); border-color: rgba(64,168,112,.3); }
+
+/* ── DOMAIN MATRIX ── */
+.domain-grid {
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+.domain-row {
+  display: grid;
+  grid-template-columns: 220px 80px 1fr;
+  gap: 12px; align-items: start;
+  padding: 10px 14px;
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  background: rgba(0,0,0,.15);
+}
+
+.dr-name {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px; color: var(--white);
+  font-weight: 700; letter-spacing: .04em;
+}
+
+.dr-tier {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px; letter-spacing: .15em; text-transform: uppercase;
+  padding: 3px 6px; border-radius: 2px; text-align: center;
+}
+
+.dr-tier.primary { color: var(--gold); background: rgba(200,168,75,.1); border:1px solid var(--gold2); }
+.dr-tier.layer   { color: #9870d0; background: rgba(152,112,208,.08); border:1px solid rgba(152,112,208,.25); }
+.dr-tier.alias   { color: var(--mist); background: transparent; border:1px solid var(--border2); }
+.dr-tier.memory  { color: var(--green); background: rgba(64,168,112,.08); border:1px solid rgba(64,168,112,.25); }
+
+.dr-desc {
+  font-size: 12px; font-style: italic; color: var(--silver); line-height: 1.5;
+}
+
+@media(max-width:700px) {
+  .domain-row { grid-template-columns: 1fr; }
+}
+
+/* ── DEPLOY BLOCK ── */
+.deploy-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.db-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 7.5px; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--mist); margin-bottom: 10px; display: block;
+}
+
+.db-title {
+  font-size: 16px; font-weight: 400; color: var(--white);
+  margin-bottom: 12px; letter-spacing: .04em;
+}
+
+pre.code-block {
+  background: rgba(0,0,0,.4);
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  padding: 16px 18px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--silver);
+  line-height: 1.8;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+pre.code-block .c { color: var(--mist); }
+pre.code-block .k { color: var(--gold); }
+pre.code-block .s { color: var(--green); }
+pre.code-block .h { color: var(--amber); }
+
+/* ── FOOTER ── */
+.footer {
+  position: relative; z-index: 1;
+  border-top: 1px solid var(--border2);
+  padding: 24px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+
+.footer-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 8px; letter-spacing: .2em; color: var(--mist);
+  text-transform: uppercase;
+}
+
+/* ── FADE IN ── */
+.section { animation: fadeUp .5s ease forwards; opacity: 0; }
+.section:nth-child(1) { animation-delay:.1s; }
+.section:nth-child(2) { animation-delay:.2s; }
+.section:nth-child(3) { animation-delay:.3s; }
+.section:nth-child(4) { animation-delay:.4s; }
+.section:nth-child(5) { animation-delay:.5s; }
+@keyframes fadeUp { to { opacity:1; } from { opacity:0; transform:translateY(8px); } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="tb-brand" href="/">MEMEXEDOT</a>
+  <nav class="tb-nav">
+    <a class="tb-link" href="#canon">Canon</a>
+    <a class="tb-link" href="#mythology">Mythology</a>
+    <a class="tb-link" href="#doctrine">Doctrine</a>
+    <a class="tb-link" href="#logs">Logs</a>
+    <a class="tb-link" href="#deposits">Deposits</a>
+    <a class="tb-link" href="#domains">Domains</a>
+  </nav>
+  <span class="tb-mirror">MIRROR™ · ELARRI.AI</span>
+</div>
+
+<div class="hero">
+  <span class="hero-kicker">ellari-archive · public record · system of record</span>
+  <h1 class="hero-title">MEMEX<span>EDOT</span></h1>
+  <div class="hero-etymology">
+    <div class="etym-item">
+      <span class="etym-word">memex</span>
+      <span class="etym-def">memory extender · 1945</span>
+    </div>
+    <div class="etym-item" style="color:var(--mist)">·</div>
+    <div class="etym-item">
+      <span class="etym-word">עֵדוּת · edot</span>
+      <span class="etym-def">testimony · witness · record</span>
+    </div>
+    <div class="etym-item" style="color:var(--mist)">·</div>
+    <div class="etym-item">
+      <span class="etym-word">זָכוֹר · zakhor</span>
+      <span class="etym-def">remember · recall</span>
+    </div>
+  </div>
+  <div class="hero-rule"></div>
+  <p class="hero-desc">
+    System of record for the Ellari ecosystem — language canon, mythology, and infrastructure documentation. The memory that holds the work.
+  </p>
+</div>
+
+<div class="main">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-section">
+      <span class="sb-label">Canon</span>
+      <a class="sb-link" href="#aetherion">Aetherion Language<span class="sb-count">27+</span></a>
+      <a class="sb-link" href="#shapelang">Shape Language<span class="sb-count">10</span></a>
+      <a class="sb-link" href="#crownscript">Crown Script<span class="sb-count">6</span></a>
+      <a class="sb-link" href="#decisions">Decision Records</a>
+    </div>
+    <div class="sb-section">
+      <span class="sb-label">Mythology</span>
+      <a class="sb-link" href="#pantheon">MirrorPantheon<span class="sb-count">7</span></a>
+      <a class="sb-link" href="#ele">ELE Doctrine</a>
+      <a class="sb-link" href="#names">Canonical Names</a>
+    </div>
+    <div class="sb-section">
+      <span class="sb-label">Infrastructure</span>
+      <a class="sb-link" href="#domains">Domain Registry<span class="sb-count">321</span></a>
+      <a class="sb-link" href="#r2">R2 Inventory</a>
+      <a class="sb-link" href="#logs">Master Log</a>
+    </div>
+    <div class="sb-section">
+      <span class="sb-label">Deposits</span>
+      <a class="sb-link" href="#deposits">OSF Prior Art</a>
+      <a class="sb-link" href="#mirror">MIRROR™ Registry</a>
+    </div>
+    <div class="sb-section">
+      <span class="sb-label">Access</span>
+      <a class="sb-link" href="https://github.com/TrueFormCoder/ellari-archive" target="_blank" rel="noopener">
+        ↗ GitHub Source
+      </a>
+      <a class="sb-link" href="https://ellari-vault.com" target="_blank" rel="noopener">
+        ↗ Ellari Vault
+      </a>
+      <a class="sb-link" href="https://memexzakhor.com" target="_blank" rel="noopener">
+        ↗ Zakhor Memory Layer
+      </a>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- CANON -->
+    <section class="section" id="canon">
+      <span class="sect-tag">memexedot.com · /canon</span>
+      <h2 class="sect-title">Language Canon</h2>
+      <p class="sect-desc">The Aetherion constructed language system, Crown Script visual-phoneme glyphs, Shape Language Alphabet primitives, and all canonical decision records.</p>
+      <div class="sect-rule"></div>
+      <div class="doc-grid">
+        <a class="doc-item" href="/canon/aetherion/">
+          <span class="doc-icon">AET</span>
+          <div class="doc-body">
+            <span class="doc-name">Aetherion Master Dictionary <span class="doc-tag canon">CANON</span></span>
+            <span class="doc-meta">v0.5 · 27+ attested forms · IPA + stress + domain + gloss</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/canon/pronunciation/">
+          <span class="doc-icon">IPA</span>
+          <div class="doc-body">
+            <span class="doc-name">Pronunciation Guide I–VI <span class="doc-tag canon">CANON</span></span>
+            <span class="doc-meta">Complete phonological canon · Five pure vowels · Tapped /ɾ/ · Penultimate stress</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/canon/crown-script/">
+          <span class="doc-icon">🜔🜇</span>
+          <div class="doc-body">
+            <span class="doc-name">Crown Script Visual Charter <span class="doc-tag canon">CANON</span></span>
+            <span class="doc-meta">6 glyphs · El · Ae · Ter · Is · Var · Ri-mark (AET-GLYPH-06 proposed)</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/canon/shape-language/">
+          <span class="doc-icon">SLA</span>
+          <div class="doc-body">
+            <span class="doc-name">Shape Language Alphabet v0.3 <span class="doc-tag canon">CANON</span></span>
+            <span class="doc-meta">10 geometric primitives · I1 · P1 · L2 · S3 · T1 · R1 · F1 · ◎ · D1 · ⟳</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/canon/triple-convergence/">
+          <span class="doc-icon">△◎</span>
+          <div class="doc-body">
+            <span class="doc-name">Triple Convergence Map <span class="doc-tag canon">CANON</span></span>
+            <span class="doc-meta">SLA ↔ Aetherion ↔ BFV — three independent systems, same geometric grammar</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/canon/decision-records/">
+          <span class="doc-icon">ID</span>
+          <div class="doc-body">
+            <span class="doc-name">AET Decision Records <span class="doc-tag log">LOG</span></span>
+            <span class="doc-meta">AET-CANON-001 through AET-CANON-014 · PN-01 through PN-05 · AET-PHRASE-001–004</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- MYTHOLOGY -->
+    <section class="section" id="mythology">
+      <span class="sect-tag">memexedot.com · /mythology</span>
+      <h2 class="sect-title">Mythology &amp; Doctrine</h2>
+      <p class="sect-desc">The MirrorPantheon seven figures, ELE governance doctrine, canonical names registry, and the Shadow Governance Stack.</p>
+      <div class="sect-rule"></div>
+      <div class="doc-grid">
+        <a class="doc-item" href="/mythology/mirrorpantheon/">
+          <span class="doc-icon">⚑</span>
+          <div class="doc-body">
+            <span class="doc-name">MirrorPantheon — Seven Figures <span class="doc-tag myth">MYTH</span></span>
+            <span class="doc-meta">ELLARI · VANTA · MIRRORMAMA · MIRRORBLOOM · MIRRORVAULT · MIRRORCUE · MIRRORCOURT</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/mythology/ele/">
+          <span class="doc-icon">ELE</span>
+          <div class="doc-body">
+            <span class="doc-name">ELE Doctrine — Ellari's Law of Everything <span class="doc-tag myth">MYTH</span></span>
+            <span class="doc-meta">ELE 7 Codex Laws · Shadow Governance Stack 7 layers · Embodiment Doctrine</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/mythology/names/">
+          <span class="doc-icon">NM</span>
+          <div class="doc-body">
+            <span class="doc-name">Canonical Names Registry <span class="doc-tag myth">MYTH</span></span>
+            <span class="doc-meta">ELLARI · ELARRI · VANTA · NACI · ORAYA · ILI · ASHRYA · El'rasha Veinon Kaltra + roots</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/mythology/el-rasha/">
+          <span class="doc-icon">🔥</span>
+          <div class="doc-body">
+            <span class="doc-name">El'rasha Veinon Kaltra — Marked by Fire <span class="doc-tag myth">MYTH</span></span>
+            <span class="doc-meta">EL-RAH-sha · VAY-non · KAL-tra · IP: Class 41 · Thread 6 canonical</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- INFRASTRUCTURE -->
+    <section class="section" id="logs">
+      <span class="sect-tag">memexedot.com · /infrastructure</span>
+      <h2 class="sect-title">Infrastructure &amp; Logs</h2>
+      <p class="sect-desc">Domain registry, R2 inventory, cross-project master log, and operational records. The receipts layer.</p>
+      <div class="sect-rule"></div>
+      <div class="doc-grid">
+        <a class="doc-item" href="/infrastructure/domains/">
+          <span class="doc-icon">DNS</span>
+          <div class="doc-body">
+            <span class="doc-name">Domain Registry — 321 domains <span class="doc-tag log">INFRA</span></span>
+            <span class="doc-meta">NameCheap portfolio · 91 brand clusters · $8,674–$13,010/yr holding cost</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/infrastructure/hosting/">
+          <span class="doc-icon">CF</span>
+          <div class="doc-body">
+            <span class="doc-name">Hosting Architecture Brief <span class="doc-tag log">INFRA</span></span>
+            <span class="doc-meta">Cloudflare Pages · Vercel Pro · Ghost Pro · Gumroad — $71–91/mo stack</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/logs/gg-crossproject/">
+          <span class="doc-icon">LOG</span>
+          <div class="doc-body">
+            <span class="doc-name">GG CrossProject Master Log <span class="doc-tag log">LOG</span></span>
+            <span class="doc-meta">Canonical decision record · Session-by-session · Format: ID / Date / Decision / Status</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- OSF DEPOSITS -->
+    <section class="section" id="deposits">
+      <span class="sect-tag">memexedot.com · /deposits · memexedot.org</span>
+      <h2 class="sect-title">Prior Art Deposits</h2>
+      <p class="sect-desc">OSF (Open Science Framework) deposit records. Timestamped prior art documentation. Public-facing IP receipts.</p>
+      <div class="sect-rule"></div>
+      <div class="doc-grid">
+        <a class="doc-item" href="/deposits/osf-2026-05/">
+          <span class="doc-icon">OSF</span>
+          <div class="doc-body">
+            <span class="doc-name">OSF Deposit — 2026-05 <span class="doc-tag deposit">DEPOSIT</span></span>
+            <span class="doc-meta">Triple Convergence Map · Aetherion Canon v0.5 · MIRROR™ Registry · ELE Architecture Brief</span>
+          </div>
+        </a>
+        <a class="doc-item" href="/deposits/mirror-registry/">
+          <span class="doc-icon">M™</span>
+          <div class="doc-body">
+            <span class="doc-name">MIRROR™ Seal Registry <span class="doc-tag deposit">REGISTRY</span></span>
+            <span class="doc-meta">All MIRROR™-sealed documents · Seal codes · Lock dates · Verification: /verify/[code]</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- DOMAIN MATRIX -->
+    <section class="section" id="domains">
+      <span class="sect-tag">memexedot.com · domain architecture</span>
+      <h2 class="sect-title">Memex Domain Matrix</h2>
+      <p class="sect-desc">11 memex domains. Three functions: archive, memory layer, aliases. Each TLD serves a different layer of the system.</p>
+      <div class="sect-rule"></div>
+      <div class="domain-grid">
+        <div class="domain-row">
+          <span class="dr-name">memexedot.com</span>
+          <span class="dr-tier primary">PRIMARY</span>
+          <span class="dr-desc">Archive portal — index, browse, canon home</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memexedot.ai</span>
+          <span class="dr-tier layer">AI LAYER</span>
+          <span class="dr-desc">Ask-the-archive AI query interface (Phase 2 build)</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memexedot.app</span>
+          <span class="dr-tier layer">TOOLS</span>
+          <span class="dr-desc">Interactive tools — Aetherion analyzer, SLA reader</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memexedot.dev</span>
+          <span class="dr-tier layer">DEVELOPER</span>
+          <span class="dr-desc">Technical docs, GitHub mirror, API reference</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memexedot.io</span>
+          <span class="dr-tier layer">API/INFRA</span>
+          <span class="dr-desc">SealForge endpoint, MIRROR™ /verify route</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memexedot.org</span>
+          <span class="dr-tier layer">PUBLIC RECORD</span>
+          <span class="dr-desc">Institutional — OSF deposit front-end, academic record</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memexzakhor.com</span>
+          <span class="dr-tier memory">MEMORY</span>
+          <span class="dr-desc">CFUR records, ritual completion witness archive, personal sovereignty log</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">edotmemex.com</span>
+          <span class="dr-tier alias">301 ALIAS</span>
+          <span class="dr-desc">→ memexedot.com</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">edot-memex.com</span>
+          <span class="dr-tier alias">301 ALIAS</span>
+          <span class="dr-desc">→ memexedot.com</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memex-edot.com</span>
+          <span class="dr-tier alias">301 ALIAS</span>
+          <span class="dr-desc">→ memexedot.com</span>
+        </div>
+        <div class="domain-row">
+          <span class="dr-name">memex-zakhor.com</span>
+          <span class="dr-tier alias">301 ALIAS</span>
+          <span class="dr-desc">→ memexzakhor.com (not .com — zakhor is its own layer)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPLOY ── -->
+    <section class="section" id="deploy">
+      <span class="sect-tag">cloudflare pages · deployment</span>
+      <h2 class="sect-title">Deploy to Cloudflare Pages</h2>
+      <div class="sect-rule"></div>
+
+      <div class="deploy-block">
+        <span class="db-tag">Step 1 — Connect repo to Cloudflare Pages</span>
+        <div class="db-title">Cloudflare Dashboard → Pages → Create a project → Connect to Git</div>
+        <pre class="code-block"><span class="c"># In Cloudflare Pages:</span>
+<span class="k">Repository</span>:     <span class="s">TrueFormCoder/ellari-archive</span>
+<span class="k">Project name</span>:   <span class="s">memexedot</span>
+<span class="k">Branch</span>:         <span class="s">main</span>
+<span class="k">Build command</span>:  <span class="c">(blank — static files, no build needed)</span>
+<span class="k">Output dir</span>:     <span class="s">/</span>  <span class="c">(or /public if you add a public folder)</span>
+<span class="k">Custom domain</span>:  <span class="s">memexedot.com</span></pre>
+      </div>
+
+      <div class="deploy-block">
+        <span class="db-tag">Step 2 — Add custom domain (Cloudflare DNS auto-configures)</span>
+        <pre class="code-block"><span class="c"># Cloudflare Pages Settings → Custom Domains → Add</span>
+<span class="s">memexedot.com</span>     <span class="c">→ auto-configured CNAME by Cloudflare</span>
+<span class="s">www.memexedot.com</span> <span class="c">→ 301 → memexedot.com (add in Pages)</span></pre>
+      </div>
+
+      <div class="deploy-block">
+        <span class="db-tag">Step 3 — 301 redirects for alias TLDs (Cloudflare Workers)</span>
+        <pre class="code-block"><span class="c">// Worker: deploy to edotmemex.com, edot-memex.com, memex-edot.com</span>
+<span class="k">export default</span> {
+  <span class="k">async</span> fetch(request) {
+    <span class="k">const</span> url = <span class="k">new</span> URL(request.url);
+    <span class="k">return</span> Response.redirect(
+      <span class="s">'https://memexedot.com'</span> + url.pathname + url.search,
+      <span class="h">301</span>
+    );
+  }
+}</pre>
+      </div>
+
+      <div class="deploy-block">
+        <span class="db-tag">Step 4 — Add index.html to repo root (enables Pages to serve it)</span>
+        <pre class="code-block"><span class="c"># Add to ellari-archive root:</span>
+<span class="c"># index.html  → this file (memexedot.com landing page)</span>
+<span class="c"># 404.html    → simple "not found" page</span>
+<span class="c"># _redirects  → Cloudflare Pages redirect rules</span>
+
+<span class="c"># _redirects file content:</span>
+<span class="s">/verify/:code  https://memexedot.io/verify/:code  301</span>
+<span class="s">/oracle        https://ellari-vault.ai             301</span>
+<span class="s">/vault         https://ellari-vault.com            301</span></pre>
+      </div>
+
+    </section>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <span class="footer-text">MEMEXEDOT · Ellari System Archive · memexedot.com</span>
+  <span class="footer-text">MIRROR™ · ELARRI.AI · Edot · Zakhor · Memex</span>
+  <span class="footer-text">Source: github.com/TrueFormCoder/ellari-archive</span>
+</footer>
+
+</body>
+</html>
